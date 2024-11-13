@@ -1,0 +1,117 @@
+@use "./variables" as *;
+
+$background-colors: (
+  "violet": $violet,
+  "gray": $gray,
+  "navy-blue": $navy-blue,
+  "light": $white,
+);
+
+$themes: "dark", "light";
+
+// Card Mixin
+@mixin card {
+  font-family: $font-family;
+  padding: $card-padding;
+  border-radius: $card-border-radius;
+  .review__person {
+    display: flex;
+    place-items: center;
+    .person__avatar {
+      height: $img-HW;
+      width: $img-HW;
+      margin-right: $img-margin-right;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+      }
+    }
+    .person__info {
+      display: flex;
+      flex-direction: column;
+      place-items: flex-start;
+    }
+  }
+  .review__title {
+    padding: 20px 0;
+    line-height: 1.5;
+    font: {
+      size: $font-size-title;
+      weight: $font-weight-bold;
+    }
+  }
+  .review__text {
+    line-height: 1.5;
+  }
+}
+
+/* Cards Creation */
+.container__review {
+  @include card;
+}
+
+/* Background Colors */
+@each $color, $value in $background-colors {
+  .container__review.#{$color} {
+    background-color: $value;
+  }
+}
+
+/* Text Colors */
+@each $theme in $themes {
+  @if $theme == "dark" {
+    .container__review.#{$theme} {
+      .review__title {
+        color: $white-text;
+      }
+      .person__name {
+        color: $gray-name;
+      }
+      .person__status {
+        color: $white-person-status;
+        font-size: $font-size-status;
+      }
+      .review__text {
+        color: $white-paragraph;
+      }
+    }
+  } @else if $theme == "light" {
+    .container__review.#{$theme} {
+      .review__title,
+      .person__name {
+        color: $gray-text;
+      }
+      .person__status {
+        color: $gray-person-status;
+        font-size: $font-size-status;
+      }
+      .review__text {
+        color: $gray-paragraph;
+      }
+    }
+  }
+}
+
+/* Avatar border */
+.violet .person__avatar,
+.navy-blue .person__avatar {
+  border: 3px solid hsl(263, 45%, 59%);
+}
+
+/* Double Quotation marks */
+.violet {
+  position: relative;
+}
+
+.violet::before {
+  font-family: sans-serif;
+  content: "“";
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  font-size: clamp(100px, 50vw, 250px);
+  line-height: 0.768;
+  color: $white;
+  opacity: 0.2;
+}

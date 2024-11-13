@@ -1,0 +1,17 @@
+/* Font Setup: */
+@use "./variables" as *;
+
+@font-face {
+  font: {
+    family: $font-family;
+    weight: $font-weight-medium;
+  }
+  src: url(../assets/fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Medium.ttf);
+}
+@font-face {
+  font: {
+    family: $font-family;
+    weight: $font-weight-bold;
+  }
+  src: url(../assets/fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-SemiBold.ttf);
+}

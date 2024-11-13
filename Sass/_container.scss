@@ -1,0 +1,9 @@
+.container {
+  max-width: calc(100% - 50px);
+  margin: 70px auto;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  text-align: left;
+}

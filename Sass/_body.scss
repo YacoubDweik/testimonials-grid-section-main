@@ -1,0 +1,8 @@
+// Body styles
+@use "./variables" as *;
+
+body {
+  background-color: $body-bg;
+  font-size: $font-size-body; /* 13px */
+  font-weight: $font-weight-medium;
+}
