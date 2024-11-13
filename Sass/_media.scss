@@ -14,8 +14,8 @@ $Desktop-breakpoint: 1200px;
   }
   .violet::before {
     top: 0;
-    right: 50px;
-    font-size: clamp(100px, 50vw, 500px);
+    right: 0px;
+    font-size: 400px;
   }
 }
 
@@ -44,5 +44,10 @@ $Desktop-breakpoint: 1200px;
   .light.two {
     grid-area: 1/4/3/5;
     transform: translateX(0);
+  }
+  .violet::before {
+    top: 0;
+    right: 50px;
+    font-size: 500px;
   }
 }
