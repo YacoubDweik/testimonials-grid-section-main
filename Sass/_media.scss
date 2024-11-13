@@ -27,6 +27,7 @@ $Desktop-breakpoint: 1200px;
     place-items: center;
   }
   .container {
+    margin: 0 auto;
     max-width: 1110px;
     grid-template-columns: repeat(4, 1fr);
     place-items: stretch;

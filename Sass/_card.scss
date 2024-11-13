@@ -12,7 +12,7 @@ $themes: "dark", "light";
 // Card Mixin
 @mixin card {
   font-family: $font-family;
-  padding: $card-padding;
+  padding: $card-padding-top $card-padding-left;
   border-radius: $card-border-radius;
   .review__person {
     display: flex;
@@ -34,15 +34,14 @@ $themes: "dark", "light";
     }
   }
   .review__title {
-    padding: 20px 0;
-    line-height: 1.5;
+    padding: 19px 0;
     font: {
       size: $font-size-title;
       weight: $font-weight-bold;
     }
   }
   .review__text {
-    line-height: 1.5;
+    line-height: 1.4;
   }
 }
 
